@@ -1,11 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Add this namespace
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl; // Add this namespace
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int score = 0;
     public int targetScore = 4; // Score to reach before changing scenes
+
+    public int getScore(){
+        return score;
+    }
 
     void Awake()
     {
@@ -32,7 +37,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void LoadNewScene()
+   public void LoadNewScene()
     {
         SceneManager.LoadScene("VictoryScene"); // Use your new scene's name
     }
